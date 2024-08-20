@@ -1,6 +1,7 @@
 import model.empleados;
 import model.cuentaBanco;
 import model.libro;
+import model.itemVenta;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,7 +33,7 @@ public class Main {
 
         c1.debito();
         c1.debito();*/
-
+/*
 
     libro l1 = new libro("El Quijote","Miguel de Cervantes",500.0F,10);
     libro l2 = new libro("Cien Años de Soledad","Gabriel Garcia Marquez",700.00F,5);
@@ -45,6 +46,29 @@ public class Main {
     l2.venta(8);
     l2.reponer(5);
     l2.imprimir();
+*/
+int salida= 1;
+while(salida>0){
+    switch (salida){
+        case 1:
+                itemVenta i1 = new itemVenta("arroz X 1kg",5,1800.00d);
+        case 2:
+
+        case 3:
+
+        case 4:
+
+        case 5:
+
+        case 6:
+            salida=0;
+    }
+
+
+        }
+
+
+
 
     }
 
