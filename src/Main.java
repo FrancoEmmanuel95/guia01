@@ -3,8 +3,13 @@ import model.cuentaBanco;
 import model.libro;
 import model.itemVenta;
 
+import javax.swing.*;
+import java.util.*;
+
 public class Main {
+    private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
+
 /*
         empleados e1 = new empleados(23456345,"Carlos","Gutierrez", 25000.00F);
         empleados e2 = new empleados(34234123,"Ana","Sanchez",27500.00F);
@@ -47,22 +52,42 @@ public class Main {
     l2.reponer(5);
     l2.imprimir();
 */
-int salida= 1;
-while(salida>0){
-    switch (salida){
-        case 1:
-                itemVenta i1 = new itemVenta("arroz X 1kg",5,1800.00d);
-        case 2:
+        //itemVenta i1 = new itemVenta("papa",10, (double) 20.32);
+        itemVenta i1 = new itemVenta();
+        int salida= 1;
+        System.out.println("ingrese una opcion.\n 1) agregar un articulo.\n 2) mostrar el producto.\n 3) cambiar la cantidad del articulo.\n 4) cambiar el precio del articulo.\n 5) calcular precio total\n 6) salir.");
+     //   salida=scan.nextInt();
+        salida=Integer.valueOf(JOptionPane.showInputDialog());
+        while(salida>0){
+            switch (salida){
+                case 1:
 
-        case 3:
-
-        case 4:
-
-        case 5:
-
-        case 6:
-            salida=0;
-    }
+                    System.out.println("ingrese el nombre del articulo: ");
+                    String producto = scan.nextLine();
+                    i1.setDesc(producto);
+                    System.out.printf("ingrese la el precio: ");
+                    Double precioart=scan.nextDouble();
+                    i1.setPrecio(precioart);
+                    System.out.println("ingrese la cantidad");
+                    Integer cantidad=scan.nextInt();
+                    i1.setCant(cantidad);
+                case 2:
+                    i1.mostrarItem();
+                case 3:
+                    System.out.printf("\ningrese la nueva cantidad: ");
+                    cantidad= scan.nextInt();
+                    i1.setCant(cantidad);
+                case 4:
+                    System.out.printf("ingrese el nuevo precio: ");
+                    precioart= scan.nextDouble();
+                    i1.setPrecio(Double.valueOf(precioart));
+                case 5:
+                    Double precioTotal;
+                    precioTotal=i1.calcularPrecioTotal();
+                    System.out.println("el total es de: $"+precioTotal);
+                case 6:
+                    salida=0;
+            }
 
 
         }

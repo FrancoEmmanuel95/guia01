@@ -38,12 +38,13 @@ public class itemVenta {
         return this.precio;
     }
 
-    public Double calcularPrecioTotal(Integer cant){
-        return this.precio * cant;
+    public Double calcularPrecioTotal(){
+        return this.precio * this.cant;
     }
 
     public void mostrarItem(){
-        System.out.println("id:"+this.id+", desc:"+this.desc+", cant:"+this.cant+", p.unit:$"+this.precio+calcularPrecioTotal(this.cant));
+        Double total = calcularPrecioTotal();
+        System.out.println("id:"+this.id+", desc:"+this.desc+", cant:"+this.cant+", p.unit:$"+this.precio);
     }
 
 
